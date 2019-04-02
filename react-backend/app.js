@@ -41,6 +41,10 @@ connection.connect(function(err){
   (err)? console.log(err+'+++++++++++++++//////////'): console.log('connection********');
 });
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 require('./sockets/message-sockets')(io, connection);
 require('./routes/html-routes')(app, connection);
 require('./routes/message-api-routes')(app, connection);

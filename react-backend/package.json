@@ -1,0 +1,25 @@
+{
+  "name": "react-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "client": "cd client && npm run start",
+    "start": "concurrently \"node ./bin/www\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "cookie-parser": "~1.4.3",
+    "create-react-app": "^2.1.1",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http": "0.0.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "mysql": "^2.16.0",
+    "socket.io": "^2.1.1"
+  }
+}
